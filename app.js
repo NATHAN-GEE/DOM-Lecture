@@ -43,11 +43,11 @@ let info = navigator.oscpu; //can show what browser the client is on
 // groceries[0].innerText = "Milk";
 // console.log(groceries.item(2));
 
-//let liTag = document.getElementsByTagName("li"); //Gets all the li in the whole docuemnt!!!
-//console.log(liTag);
+let liTag = document.getElementsByTagName("li"); //Gets all the li in the whole docuemnt!!!
+console.log(liTag);
 
-// let selectAll = document.querySelectorAll("ul li");
-// console.log(selectAll)
+let selectAll = document.querySelectorAll("ul li");
+console.log(selectAll);
 
 //Nodelist is static
 //HTMLCollection is Dynamic
@@ -61,7 +61,7 @@ let info = navigator.oscpu; //can show what browser the client is on
 
 //WHiteSpace is considered text and text = node
 //ALl can be accessed by index numbers starting at [0]
-//console.log(document.body.children)
+console.log(document.body.children);
 //first(Element)Child - first element of node
 //lastChild - last element of node
 //parentNode - access parent node of element
@@ -76,12 +76,12 @@ let info = navigator.oscpu; //can show what browser the client is on
 //innertext proprty
 //.innerHTML - specifies HTML content of an element
 
-//Use a looop to get each element in liTag HTMLCollection and change their properties as shown.
-// for (tag of liTag) {
-//   console.log(tag);
-//   tag.style.fontFamily = "cursive";
-//   tag.style.color = "blue";
-// }
+// Use a looop to get each element in liTag HTMLCollection and change their properties as shown.
+for (tag of liTag) {
+  console.log(tag);
+  tag.style.fontFamily = "cursive";
+  tag.style.color = "blue";
+}
 
 //Reassign 5th [index 4] list item of all listItem classes
 //document.getElementsByClassName("listItem")[4].innerText = "Yell at Harry";
@@ -93,7 +93,9 @@ let button = document
   .addEventListener("click", (e) => {
     let addList = document.getElementById("listInput").value;
     let newGroceryItem = document.createElement("li");
-    let groceryList = document.getElementById("listItem1");
+    let groceryList = document.getElementById("groceryList");
     newGroceryItem.innerText = addList;
     groceryList.appendChild(newGroceryItem);
+    newGroceryItem.style.color = "blue";
+    newGroceryItem.style.fontFamily = "cursive";
   });
